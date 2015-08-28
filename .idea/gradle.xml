@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/jokeapi" />
             <option value="$PROJECT_DIR$/jokegenerator" />
+            <option value="$PROJECT_DIR$/jokeshow" />
           </set>
         </option>
       </GradleProjectSettings>

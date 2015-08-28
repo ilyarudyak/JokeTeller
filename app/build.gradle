@@ -25,5 +25,8 @@ dependencies {
     // Added for AdMob
     compile 'com.android.support:appcompat-v7:23.0.0'
     compile 'com.google.android.gms:play-services:7.8.0'
+    // add endpoints api to get jokes from
     compile project(path: ':jokeapi', configuration: 'android-endpoints')
+    // add android library to show a joke
+    compile project(':jokeshow')
 }

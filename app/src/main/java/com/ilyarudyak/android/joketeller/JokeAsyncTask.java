@@ -1,13 +1,15 @@
 package com.ilyarudyak.android.joketeller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
+import com.ilyarudyak.android.jokeshow.JokeShowActivity;
+import com.ilyarudyak.android.jokeshow.JokeShowFragment;
 import com.ilyarudyak.joketeller.jokeapi.jokeApi.JokeApi;
 
 import java.io.IOException;
@@ -50,7 +52,13 @@ public class JokeAsyncTask extends AsyncTask<Void, Void, String> {
     }
 
     @Override
-    protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+    protected void onPostExecute(String jokeStr) {
+
+        // start library activity and send a joke via intent
+        Intent jokeIntent = new Intent(context, JokeShowActivity.class);
+        jokeIntent.putExtra(JokeShowFragment.JOKE, jokeStr);
+        context.startActivity(jokeIntent);
+
+//        Toast.makeText(context, jokeStr, Toast.LENGTH_LONG).show();
     }
 }
