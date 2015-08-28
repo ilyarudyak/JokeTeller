@@ -3,6 +3,7 @@ package com.ilyarudyak.joketeller.jokeapi;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
+import com.ilyarudyak.android.joketeller.JokeGenerator;
 
 import java.util.logging.Logger;
 
@@ -33,9 +34,13 @@ public class JokeEndpoint {
      */
     @ApiMethod(name = "getJoke")
     public Joke getJoke(@Named("id") Long id) {
-        // TODO: Implement this function
+
+        JokeGenerator jg = new JokeGenerator();
+        String jokeStr = jg.getJoke();
+
         Joke joke = new Joke();
-        joke.setJoke("it's a joke");
+        joke.setJoke(jokeStr);
+
         logger.info("Calling getJoke method");
         return joke;
     }
