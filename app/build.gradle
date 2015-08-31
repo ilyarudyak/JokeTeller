@@ -18,13 +18,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets { main { java.srcDirs = ['src/main/java', 'src/test/java'] } }
+
+    productFlavors {
+        free {
+            applicationId "com.ilyarudyak.android.joketeller.free"
+        }
+        paid {
+            applicationId "com.ilyarudyak.android.joketeller.paid"
+        }
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    // Added for AdMob
     compile 'com.android.support:appcompat-v7:23.0.0'
+    // we add AdMob only for free flavor
     compile 'com.google.android.gms:play-services:7.8.0'
     // add endpoints api to get jokes from
     compile project(path: ':jokeapi', configuration: 'android-endpoints')
