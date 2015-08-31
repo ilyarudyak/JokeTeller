@@ -17,6 +17,8 @@ public class MainActivityFragment extends Fragment {
 
     public static final String FREE = "free";
 
+
+
     public MainActivityFragment() {
     }
 
