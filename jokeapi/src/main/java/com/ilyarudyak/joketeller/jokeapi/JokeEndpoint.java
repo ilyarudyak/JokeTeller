@@ -5,6 +5,7 @@ import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.ilyarudyak.android.joketeller.JokeGenerator;
 
+import java.io.IOException;
 import java.util.logging.Logger;
 
 import javax.inject.Named;
@@ -33,7 +34,7 @@ public class JokeEndpoint {
      * @return The <code>Joke</code> associated with <code>id</code>.
      */
     @ApiMethod(name = "getJoke")
-    public Joke getJoke(@Named("id") Long id) {
+    public Joke getJoke(@Named("id") Long id) throws IOException {
 
         JokeGenerator jg = new JokeGenerator();
         String jokeStr = jg.getJoke();

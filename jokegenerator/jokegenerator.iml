@@ -27,6 +27,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="_Users_ilyarudyak_Dropbox_android_udacity_JokeTeller_jokegenerator_build_resources_main" level="project" />
     <orderEntry type="library" exported="" name="jokegenerator.jokegenerator" level="project" />
   </component>
 </module>

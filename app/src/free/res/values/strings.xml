@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JokeTellerFree</string>
+    <string name="instructions">Press the button for a delicious joke! It\'s free!</string>
 </resources>
