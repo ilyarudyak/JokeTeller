@@ -17,3 +17,22 @@ allprojects {
         jcenter()
     }
 }
+
+task runTestsOnLocalServer(dependsOn: [":jokeapi:appengineRun",
+                                       ":app:connectedAndroidTest",
+                                       ":jokeapi:appengineStop"]) {
+
+    evaluationDependsOn ":jokeapi"
+
+    project(":jokeapi") {
+        appengine {
+            daemon true
+        }
+    }
+
+    doLast {
+        println "JobDone"
+    }
+}
+
+tasks.getByPath(":app:connectedAndroidTest").mustRunAfter tasks.getByPath(":jokeapi:appengineRun")

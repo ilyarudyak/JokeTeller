@@ -32,8 +32,8 @@ public class JokeAsyncTask extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
         if(mJokeApiService == null) {  // Only do this once
 
-//            setLocalBuilder();
-            setCloudBuilder();
+            setLocalBuilder();
+//            setCloudBuilder();
 
             mJokeApiService = mBuilder.build();
         }
