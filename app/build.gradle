@@ -33,7 +33,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.1.0'
     // we add AdMob only for free flavor
-    compile 'com.google.android.gms:play-services:8.1.0'
+    freeCompile 'com.google.android.gms:play-services:8.1.0'
     // add endpoints api to get jokes from
     compile project(path: ':jokeapi', configuration: 'android-endpoints')
     // add android library to show a joke
